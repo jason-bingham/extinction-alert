@@ -1,0 +1,256 @@
+{
+  "ratePerYear": 27000,
+  "categories": [
+    {
+      "id": "insect",
+      "label": "Insect",
+      "plural": "Insects",
+      "weight": 0.36,
+      "article": "An",
+      "facts": [
+        "An estimated 40% of insect species are in decline globally, with populations dropping by 75% in some regions over the past 30 years.",
+        "Insects form the base of most terrestrial food webs. Their disappearance triggers cascading collapse across entire ecosystems.",
+        "Flying insect populations have declined by more than 75% in protected natural areas in Germany over 27 years — and the trend is global.",
+        "The drivers are well understood: habitat loss, pesticide use, light pollution, invasive species, and climate change.",
+        "One in three bites of food humans eat depends on insect pollination. Their decline threatens agriculture directly."
+      ],
+      "links": [
+        {
+          "label": "IUCN Red List",
+          "url": "https://www.iucnredlist.org"
+        },
+        {
+          "label": "Insect Decline (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Insect_decline"
+        },
+        {
+          "label": "Recently Extinct Insects",
+          "url": "https://en.wikipedia.org/wiki/List_of_recently_extinct_insects"
+        }
+      ]
+    },
+    {
+      "id": "invertebrate",
+      "label": "Invertebrate",
+      "plural": "Invertebrates",
+      "weight": 0.16,
+      "article": "An",
+      "facts": [
+        "Freshwater molluscs are among the most imperiled groups on Earth — over 40% of species are extinct or critically endangered.",
+        "Marine invertebrates face mounting pressure from ocean acidification, which dissolves the calcium carbonate that forms their shells.",
+        "Coral reefs — built by tiny invertebrate animals — have declined by 50% globally since 1950 and face near-total collapse by 2100 under current warming trajectories.",
+        "Over 600 mollusc species have gone extinct since 1500 CE, more than any other animal group on record.",
+        "Many invertebrate extinctions go undocumented — scientists estimate far more species vanish than are ever catalogued."
+      ],
+      "links": [
+        {
+          "label": "IUCN Red List",
+          "url": "https://www.iucnredlist.org"
+        },
+        {
+          "label": "Recently Extinct Molluscs",
+          "url": "https://en.wikipedia.org/wiki/List_of_recently_extinct_molluscs"
+        },
+        {
+          "label": "Coral Reef Decline",
+          "url": "https://en.wikipedia.org/wiki/Coral_reef#Threats"
+        }
+      ]
+    },
+    {
+      "id": "plant",
+      "label": "Plant",
+      "plural": "Plants",
+      "weight": 0.12,
+      "article": "A",
+      "facts": [
+        "Two out of every five plant species on Earth are threatened with extinction — a higher proportion than birds, mammals, or reptiles.",
+        "Plant extinctions are occurring at 500 times the historical background rate.",
+        "Each plant extinction can trigger secondary extinctions of the insects, birds, and animals that depended exclusively on it.",
+        "Forests, home to most terrestrial plant diversity, are disappearing at roughly 10 million hectares per year.",
+        "Plants produce the oxygen we breathe, regulate climate, and form the base of nearly every food web on Earth."
+      ],
+      "links": [
+        {
+          "label": "IUCN Red List",
+          "url": "https://www.iucnredlist.org"
+        },
+        {
+          "label": "Plant Extinction (Kew Gardens)",
+          "url": "https://www.kew.org/science/our-science/science-publications/state-of-the-worlds-plants-and-fungi"
+        },
+        {
+          "label": "Recently Extinct Plants",
+          "url": "https://en.wikipedia.org/wiki/List_of_recently_extinct_plants"
+        }
+      ]
+    },
+    {
+      "id": "mammal",
+      "label": "Mammal",
+      "plural": "Mammals",
+      "weight": 0.13,
+      "article": "A",
+      "facts": [
+        "26% of all mammal species are currently threatened with extinction, according to the IUCN Red List.",
+        "The total biomass of wild land mammals has declined by over 80% since the rise of human civilization.",
+        "Large mammals — 'megafauna' — have been disproportionately impacted. Their loss reshapes entire ecosystems they once maintained.",
+        "Since 1500 CE, at least 85 mammal species have gone extinct, including the thylacine, the West African black rhino, and the baiji dolphin.",
+        "Habitat destruction and hunting remain the primary drivers, but the illegal wildlife trade now kills more mammals than any other single cause."
+      ],
+      "links": [
+        {
+          "label": "IUCN Red List",
+          "url": "https://www.iucnredlist.org"
+        },
+        {
+          "label": "Recently Extinct Mammals",
+          "url": "https://en.wikipedia.org/wiki/Lists_of_recently_extinct_mammals"
+        },
+        {
+          "label": "IUCN Extinction Filter",
+          "url": "https://www.iucnredlist.org/search?redListCategory=EX"
+        }
+      ]
+    },
+    {
+      "id": "bird",
+      "label": "Bird",
+      "plural": "Birds",
+      "weight": 0.12,
+      "article": "A",
+      "facts": [
+        "Nearly 1 in 8 bird species is threatened with extinction. Since 1970, North America alone has lost 3 billion birds — a 29% decline.",
+        "Migratory bird populations have declined by up to 37% globally since the 1970s, disrupting pollination and pest control across two continents.",
+        "Window collisions, cats, and vehicle strikes kill between 1.3 and 4 billion birds in the U.S. every year.",
+        "At least 160 bird species have gone extinct since 1500 CE — more than any other vertebrate group.",
+        "Island bird species have been hardest hit: invasive rats and cats have driven dozens of unique island birds to extinction."
+      ],
+      "links": [
+        {
+          "label": "IUCN Red List",
+          "url": "https://www.iucnredlist.org"
+        },
+        {
+          "label": "Cornell - Nearly 3 billion birds gone",
+          "url": "https://www.birds.cornell.edu/home/bring-birds-back/#:~:text=Nearly%203%20Billion%20Birds%20Gone%20Since%201970,or%20another%20720%20million%20birds."
+        },
+        {
+          "label": "BirdLife Int'l - State of the World's Birds",
+          "url": "https://www.birdlife.org/state-of-the-worlds-birds/"
+        }
+      ]
+    },
+    {
+      "id": "fish",
+      "label": "Fish",
+      "plural": "Fish",
+      "weight": 0.05,
+      "article": "A",
+      "facts": [
+        "Freshwater fish are among the most endangered vertebrates — over a third of all species are threatened with extinction.",
+        "One-third of all shark and ray species are threatened with extinction, primarily due to overfishing and finning.",
+        "Ocean dead zones caused by agricultural runoff have quadrupled since 1950, suffocating entire fish communities.",
+        "Dams and water diversions have fragmented river ecosystems, pushing migratory fish like salmon and sturgeon toward collapse.",
+        "Since 1970, monitored freshwater fish populations have declined by an average of 76%."
+      ],
+      "links": [
+        {
+          "label": "IUCN Red List",
+          "url": "https://www.iucnredlist.org"
+        },
+        {
+          "label": "Recently Extinct Fish",
+          "url": "https://en.wikipedia.org/wiki/List_of_recently_extinct_fish"
+        },
+        {
+          "label": "Shark & Ray Status (Shark Trust)",
+          "url": "https://www.sharktrust.org/conservation"
+        }
+      ]
+    },
+    {
+      "id": "amphibian",
+      "label": "Amphibian",
+      "plural": "Amphibians",
+      "weight": 0.04,
+      "article": "An",
+      "facts": [
+        "Amphibians are the most threatened class of vertebrates on Earth — over 40% of known species are in decline.",
+        "The chytrid fungus Batrachochytrium dendrobatidis (Bd) has driven at least 90 amphibian species to extinction since the 1970s, the largest documented disease-driven vertebrate collapse in history.",
+        "Frogs, salamanders, and caecilians are sensitive indicators of ecosystem health. Their disappearance often signals broader collapse.",
+        "Amphibians have existed for over 350 million years, surviving five mass extinctions — but are now disappearing at 211 times the background rate.",
+        "Wetland drainage has destroyed much of their habitat. More than 35% of the world's wetlands have been lost since 1970."
+      ],
+      "links": [
+        {
+          "label": "IUCN Red List — State of the World's Amphibians",
+          "url": "https://www.iucnredlist.org/resources/sotwa"
+        },
+        {
+          "label": "Nature - Ongoing Decline of the World's Amphibians",
+          "url": "https://www.nature.com/articles/s41586-023-06578-4"
+        },
+        {
+          "label": "Amphibian Survival Alliance",
+          "url": "https://www.amphibians.org"
+        }
+      ]
+    },
+    {
+      "id": "reptile",
+      "label": "Reptile",
+      "plural": "Reptiles",
+      "weight": 0.02,
+      "article": "A",
+      "facts": [
+        "21% of all reptile species are currently threatened with extinction.",
+        "Sea turtles, which have roamed the oceans for over 100 million years, now face threats from plastic pollution, fishing bycatch, egg collection, and rising sea levels that drown nesting beaches.",
+        "The illegal wildlife trade targets reptiles heavily — particularly turtles, geckos, and chameleons prized in the exotic pet trade.",
+        "All seven species of sea turtle are classified as vulnerable, endangered, or critically endangered.",
+        "Climate change is shifting the sex ratios of reptile populations: warmer sand produces mostly female sea turtles, threatening long-term reproductive viability."
+      ],
+      "links": [
+        {
+          "label": "IUCN Red List",
+          "url": "https://www.iucnredlist.org"
+        },
+        {
+          "label": "Recently Extinct Reptiles",
+          "url": "https://en.wikipedia.org/wiki/List_of_recently_extinct_reptiles"
+        },
+        {
+          "label": "Sea Turtle Conservancy",
+          "url": "https://conserveturtles.org"
+        }
+      ]
+    }
+  ],
+  "donationOrgs": [
+    {
+      "name": "WWF",
+      "description": "Protects wildlife and wild places globally across 100+ countries.",
+      "url": "https://www.worldwildlife.org/donate"
+    },
+    {
+      "name": "Rainforest Trust",
+      "description": "Purchases and permanently protects threatened tropical habitat.",
+      "url": "https://www.rainforesttrust.org/donate"
+    },
+    {
+      "name": "Wildlife Conservation Society",
+      "description": "Saves wildlife and wild lands across 60+ countries.",
+      "url": "https://www.wcs.org/support-wcs"
+    },
+    {
+      "name": "Defenders of Wildlife",
+      "description": "Protects native animals and plants in North America.",
+      "url": "https://defenders.org/donate"
+    },
+    {
+      "name": "Amphibian Survival Alliance",
+      "description": "Dedicated to preventing amphibian extinctions worldwide.",
+      "url": "https://www.amphibians.org/donate"
+    }
+  ]
+}
