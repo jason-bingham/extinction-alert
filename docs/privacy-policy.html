@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Extinction Alert</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #160404;
+      color: #fff0f0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+
+    main {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ffaaaa;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ffb0b0;
+      line-height: 1.25;
+      margin-bottom: 32px;
+    }
+
+    .card {
+      background: rgba(255, 60, 60, 0.06);
+      border: 1px solid rgba(255, 100, 100, 0.15);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aa7777;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #ffcccc;
+      margin-bottom: 12px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 12px;
+      color: #aa7777;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: #ff7070;
+      text-decoration: none;
+    }
+
+    footer a:hover { color: #ff9090; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+        <line x1="12" y1="9" x2="12" y2="13"/>
+        <line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+      Extinction Alert
+    </div>
+
+    <h1>Privacy Policy</h1>
+
+    <div class="card">
+      <h2>Data collection</h2>
+      <p>Extinction Alert does not collect, transmit, or share any personal data or browsing information. There are no analytics, no remote servers, and no third-party services involved in the operation of this extension.</p>
+    </div>
+
+    <div class="card">
+      <h2>Local storage</h2>
+      <p>All settings — alert style, reminder interval, pause state, and today's alert count — are stored locally on your device using <code>chrome.storage</code>. This data never leaves your device.</p>
+    </div>
+
+    <div class="card">
+      <h2>Permissions</h2>
+      <p>The extension requests the <code>tabs</code> permission and <code>&lt;all_urls&gt;</code> host access solely to deliver overlay alerts to the active browser tab. No tab URLs, page content, or user activity is recorded or transmitted.</p>
+    </div>
+
+    <footer>
+      <span>Last updated: May 2026</span>
+      <a href="https://github.com/jason-bingham/extinction-alert">View source on GitHub ↗</a>
+    </footer>
+  </main>
+</body>
+</html>
