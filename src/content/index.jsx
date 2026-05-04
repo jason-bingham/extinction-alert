@@ -12,12 +12,12 @@ function playChime() {
     const ctx = new AudioContext()
     const t = ctx.currentTime
 
-    // Heavy thud — sine drops from 110 Hz to 30 Hz fast
+    // Heavy thud — sine drops from 48 Hz to 22 Hz fast
     const thud = ctx.createOscillator()
     const thudGain = ctx.createGain()
     thud.type = 'sine'
-    thud.frequency.setValueAtTime(110, t)
-    thud.frequency.exponentialRampToValueAtTime(30, t + 0.22)
+    thud.frequency.setValueAtTime(48, t)
+    thud.frequency.exponentialRampToValueAtTime(22, t + 0.22)
     thudGain.gain.setValueAtTime(0.6, t)
     thudGain.gain.exponentialRampToValueAtTime(0.001, t + 0.4)
     thud.connect(thudGain)
@@ -25,11 +25,11 @@ function playChime() {
     thud.start(t)
     thud.stop(t + 0.4)
 
-    // Tritone stab (Bb3 + E4) — the "devil's interval", sawtooth for harshness
+    // Tritone stab (D2 + Ab2) — the "devil's interval", triangle for cleaner tone
     const stab = (freq, start, dur, vol = 0.17) => {
       const osc = ctx.createOscillator()
       const gain = ctx.createGain()
-      osc.type = 'sawtooth'
+      osc.type = 'triangle'
       osc.frequency.value = freq
       gain.gain.setValueAtTime(vol, start)
       gain.gain.exponentialRampToValueAtTime(0.001, start + dur)
@@ -38,8 +38,8 @@ function playChime() {
       osc.start(start)
       osc.stop(start + dur)
     }
-    stab(233, t, 1.8)        // Bb3
-    stab(329, t + 0.04, 1.8) // E4 — tritone above Bb3
+    stab(73, t, 1.8)        // D2
+    stab(103, t + 0.04, 1.8) // Ab2 — tritone above D2
 
     setTimeout(() => ctx.close(), 2200)
   } catch (_) {}
