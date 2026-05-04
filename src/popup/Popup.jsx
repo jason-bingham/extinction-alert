@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import browser from "webextension-polyfill";
-import { getSettings, saveSetting, DEFAULTS } from "../shared/storage.js";
+import { getSettings, saveSetting, DEFAULTS, estimatedTodayCount } from "../shared/storage.js";
 
 const INTERVAL_OPTIONS = [
   { label: "~10 min", value: 10 },
@@ -79,10 +79,8 @@ export default function Popup() {
       </header>
 
       <div className="counter-box">
-        <span className="counter-num">{settings.todayCount}</span>
-        <span className="counter-label">
-          species lost since you've been online today
-        </span>
+        <span className="counter-num">{estimatedTodayCount()}</span>
+        <span className="counter-label">estimated species lost today</span>
       </div>
 
       <section className="section">
@@ -127,6 +125,20 @@ export default function Popup() {
         <button className="test-btn" onClick={triggerNow}>
           Test alert now
         </button>
+      </section>
+
+      <section className="section">
+        <label className="toggle-row">
+          <span className="toggle-label">🔔 Alert chime</span>
+          <span className="toggle-switch">
+            <input
+              type="checkbox"
+              checked={settings.chimeEnabled}
+              onChange={(e) => update("chimeEnabled", e.target.checked)}
+            />
+            <span className="toggle-track" />
+          </span>
+        </label>
       </section>
 
       <footer className="popup-footer">

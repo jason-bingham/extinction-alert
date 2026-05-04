@@ -20,12 +20,12 @@
           "url": "https://www.iucnredlist.org"
         },
         {
-          "label": "Insect Decline (Wikipedia)",
-          "url": "https://en.wikipedia.org/wiki/Insect_decline"
+          "label": "Guardian - Plummeting Insect Numbers",
+          "url": "https://www.theguardian.com/environment/2019/feb/10/plummeting-insect-numbers-threaten-collapse-of-nature"
         },
         {
-          "label": "Recently Extinct Insects",
-          "url": "https://en.wikipedia.org/wiki/List_of_recently_extinct_insects"
+          "label": "University of Florida - The Insect Apocalypse",
+          "url": "https://onlineentomology.ifas.ufl.edu/about/entomology-articles/the-insect-apocalypse-why-entomologists-need-your-help/"
         }
       ]
     },
@@ -48,12 +48,12 @@
           "url": "https://www.iucnredlist.org"
         },
         {
-          "label": "Recently Extinct Molluscs",
-          "url": "https://en.wikipedia.org/wiki/List_of_recently_extinct_molluscs"
+          "label": "Conchologists of America",
+          "url": "https://conchologistsofamerica.org/endangered-mollusks/"
         },
         {
-          "label": "Coral Reef Decline",
-          "url": "https://en.wikipedia.org/wiki/Coral_reef#Threats"
+          "label": "Coral Guardian - Coral Reefs at Risk",
+          "url": "https://www.coralguardian.org/en/coral-reefs-at-risk/"
         }
       ]
     },
@@ -76,12 +76,12 @@
           "url": "https://www.iucnredlist.org"
         },
         {
-          "label": "Plant Extinction (Kew Gardens)",
-          "url": "https://www.kew.org/science/our-science/science-publications/state-of-the-worlds-plants-and-fungi"
+          "label": "Kew Gardens - Plants in the Earth's Sixth Extinction",
+          "url": "https://www.kew.org/read-and-watch/plants-sixth-extinction"
         },
         {
-          "label": "Recently Extinct Plants",
-          "url": "https://en.wikipedia.org/wiki/List_of_recently_extinct_plants"
+          "label": "Journal for Nature Conservation - Plant Extinction",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S1617138125000640"
         }
       ]
     },
@@ -104,12 +104,12 @@
           "url": "https://www.iucnredlist.org"
         },
         {
-          "label": "Recently Extinct Mammals",
-          "url": "https://en.wikipedia.org/wiki/Lists_of_recently_extinct_mammals"
+          "label": "Our World in Data - Large Mammals",
+          "url": "https://ourworldindata.org/large-mammals-extinction"
         },
         {
-          "label": "IUCN Extinction Filter",
-          "url": "https://www.iucnredlist.org/search?redListCategory=EX"
+          "label": "IFAW - World's Most Endangered Mammals",
+          "url": "https://www.ifaw.org/journal/17-worlds-most-endangered-mammals"
         }
       ]
     },
@@ -160,8 +160,8 @@
           "url": "https://www.iucnredlist.org"
         },
         {
-          "label": "Recently Extinct Fish",
-          "url": "https://en.wikipedia.org/wiki/List_of_recently_extinct_fish"
+          "label": "Nature - 1/4 of Freshwater Fauna Threatened",
+          "url": "https://www.nature.com/articles/s41586-024-08375-z"
         },
         {
           "label": "Shark & Ray Status (Shark Trust)",
@@ -216,8 +216,8 @@
           "url": "https://www.iucnredlist.org"
         },
         {
-          "label": "Recently Extinct Reptiles",
-          "url": "https://en.wikipedia.org/wiki/List_of_recently_extinct_reptiles"
+          "label": "NSF - 1 in 5 Reptile Species Threatened",
+          "url": "https://www.nsf.gov/news/more-1-5-reptile-species-are-threatened-extinction"
         },
         {
           "label": "Sea Turtle Conservancy",
@@ -251,6 +251,26 @@
       "name": "Amphibian Survival Alliance",
       "description": "Dedicated to preventing amphibian extinctions worldwide.",
       "url": "https://www.amphibians.org/donate"
+    },
+    {
+      "name": "Buglife",
+      "description": "Saving the small things that run the planet.",
+      "url": "https://www.buglife.org.uk/"
+    },
+    {
+      "name": "Coral Guardian",
+      "description": "We protect and restore coral ecosystems worldwide by empowering local communities.",
+      "url": "https://www.coralguardian.org/en/"
+    },
+    {
+      "name": "Center for Plant Conservation",
+      "description": "Help Safeguard Plants From Extinction.",
+      "url": "https://saveplants.org/"
+    },
+    {
+      "name": "Center for Biological Diversity",
+      "description": "Saving Life on Earth.",
+      "url": "https://www.biologicaldiversity.org//"
     }
   ]
 }

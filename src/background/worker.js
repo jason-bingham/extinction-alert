@@ -1,6 +1,6 @@
 import browser from 'webextension-polyfill'
 import data from '../data/extinctions.json'
-import { getSettings, saveSetting, incrementTodayCount } from '../shared/storage.js'
+import { getSettings, estimatedTodayCount } from '../shared/storage.js'
 
 const ALARM_NAME = 'extinctionAlert'
 
@@ -23,12 +23,6 @@ function nextDelayMinutes(meanMinutes) {
   return Math.max(min, Math.min(max, raw))
 }
 
-function estimatedTodayCount() {
-  const now = new Date()
-  const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate())
-  const hoursElapsed = (now - startOfDay) / 3_600_000
-  return Math.round(hoursElapsed * (data.ratePerYear / 365 / 24))
-}
 
 function updateBadge(count) {
   browser.action.setBadgeText({ text: count > 0 ? String(count) : '' })
@@ -53,13 +47,13 @@ async function fireAlert() {
   const factIndex = Math.floor(Math.random() * category.facts.length)
   const orgIndex = Math.floor(Math.random() * data.donationOrgs.length)
   const todayEstimate = estimatedTodayCount()
-  const userCount = await incrementTodayCount()
 
-  updateBadge(userCount)
+  updateBadge(todayEstimate)
 
   const payload = {
     type: 'SHOW_ALERT',
     alertLevel: settings.alertLevel,
+    chimeEnabled: settings.chimeEnabled,
     category,
     fact: category.facts[factIndex],
     org: data.donationOrgs[orgIndex],
@@ -81,7 +75,7 @@ async function fireAlert() {
 
 browser.runtime.onInstalled.addListener(async () => {
   const settings = await getSettings()
-  updateBadge(settings.todayCount)
+  updateBadge(estimatedTodayCount())
   await scheduleNext(settings.meanIntervalMinutes)
 })
 
@@ -92,11 +86,11 @@ browser.alarms.onAlarm.addListener(async (alarm) => {
 })
 
 // Allow the popup to trigger a test alert immediately
-browser.runtime.onMessage.addListener((msg) => {
+browser.runtime.onMessage.addListener(async (msg) => {
   if (msg.type === 'TRIGGER_NOW') {
-    fireAlert()
+    await fireAlert()
   }
   if (msg.type === 'RESCHEDULE') {
-    scheduleNext(msg.meanIntervalMinutes)
+    await scheduleNext(msg.meanIntervalMinutes)
   }
 })
