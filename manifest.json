@@ -18,9 +18,17 @@
   ],
   "action": {
     "default_popup": "popup/index.html",
-    "default_icon": "icons/extinction_extension_logo.png"
+    "default_icon": {
+      "16": "icons/extinction_extension_logo-16.png",
+      "32": "icons/extinction_extension_logo-32.png",
+      "48": "icons/extinction_extension_logo-48.png",
+      "128": "icons/extinction_extension_logo-128.png"
+    }
   },
   "icons": {
-    "128": "icons/extinction_extension_logo.png"
+    "16": "icons/extinction_extension_logo-16.png",
+    "32": "icons/extinction_extension_logo-32.png",
+    "48": "icons/extinction_extension_logo-48.png",
+    "128": "icons/extinction_extension_logo-128.png"
   }
 }

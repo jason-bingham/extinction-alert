@@ -68,3 +68,7 @@ scripts/
   build-scripts.mjs         # Post-build copy step
 manifest.json               # Extension manifest (MV3)
 ```
+
+## Justification for `<all_urls>`
+
+This extension's core function is to periodically remind users about species extinction by displaying an alert on whatever page the user is currently browsing. It cannot fulfill this purpose without permission to inject content into the active tab. `<all_urls>` is required because the reminder must appear regardless of which site the user is on — restricting to a subset of domains would render the extension useless. The extension does not read, collect, or transmit any page content. It only injects a self-contained UI overlay and removes it when dismissed.
