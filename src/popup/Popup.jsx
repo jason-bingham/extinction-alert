@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import browser from "webextension-polyfill";
-import { getSettings, saveSetting, DEFAULTS, estimatedTodayCount } from "../shared/storage.js";
+import {
+  getSettings,
+  saveSetting,
+  DEFAULTS,
+  estimatedTodayCount,
+} from "../shared/storage.js";
 
 const INTERVAL_OPTIONS = [
   { label: "~10 min", value: 10 },
   { label: "~20 min", value: 20 },
   { label: "~1 hour", value: 60 },
-  { label: "~4 hours", value: 240 },
 ];
 
 const LEVEL_OPTIONS = [

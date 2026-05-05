@@ -3,7 +3,7 @@
   "name": "Extinction Alert",
   "version": "1.0.0",
   "description": "Reminds you that species are going extinct — roughly once every 20 minutes.",
-  "permissions": ["alarms", "storage", "tabs"],
+  "permissions": ["alarms", "scripting", "storage", "tabs"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background/worker.js",
@@ -18,9 +18,9 @@
   ],
   "action": {
     "default_popup": "popup/index.html",
-    "default_icon": "icons/icon.svg"
+    "default_icon": "icons/extinction_extension_logo.png"
   },
   "icons": {
-    "128": "icons/icon.svg"
+    "128": "icons/extinction_extension_logo.png"
   }
 }

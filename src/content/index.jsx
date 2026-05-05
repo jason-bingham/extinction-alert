@@ -6,6 +6,21 @@ import Banner from './Banner.jsx'
 import Modal from './Modal.jsx'
 
 let root = null
+let setAlertGlobal = null
+let pendingAlert = null
+
+// Register at module scope so the listener is live before React mounts.
+// This matters when the content script is injected dynamically — a message
+// sent immediately after injection would otherwise arrive before useEffect runs.
+browser.runtime.onMessage.addListener((msg) => {
+  if (msg.type !== 'SHOW_ALERT') return
+  if (msg.chimeEnabled) playChime()
+  if (setAlertGlobal) {
+    setAlertGlobal(msg)
+  } else {
+    pendingAlert = msg
+  }
+})
 
 function playChime() {
   try {
@@ -49,14 +64,14 @@ function AlertHost() {
   const [alert, setAlert] = useState(null)
 
   useEffect(() => {
-    const handler = (msg) => {
-      if (msg.type === 'SHOW_ALERT') {
-        if (msg.chimeEnabled) playChime()
-        setAlert(msg)
-      }
+    setAlertGlobal = setAlert
+    if (pendingAlert) {
+      setAlert(pendingAlert)
+      pendingAlert = null
     }
-    browser.runtime.onMessage.addListener(handler)
-    return () => browser.runtime.onMessage.removeListener(handler)
+    return () => {
+      setAlertGlobal = null
+    }
   }, [])
 
   if (!alert) return null
@@ -76,9 +91,9 @@ function AlertHost() {
 }
 
 function mount() {
-  if (document.getElementById('extinction-alert-root')) return
+  if (document.getElementById('extinction-extension-root')) return
   const host = document.createElement('div')
-  host.id = 'extinction-alert-root'
+  host.id = 'extinction-extension-root'
   host.style.cssText = 'all: initial; position: fixed; z-index: 2147483647; pointer-events: none;'
   document.body.appendChild(host)
   root = createRoot(host)

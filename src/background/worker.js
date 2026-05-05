@@ -60,12 +60,18 @@ async function fireAlert() {
     todayEstimate,
   }
 
-  // Send to all active tabs
+  // Send to all active tabs; inject content script first if not yet loaded
   const tabs = await browser.tabs.query({ active: true })
   for (const tab of tabs) {
     if (tab.id && tab.url && !tab.url.startsWith('chrome://') && !tab.url.startsWith('about:')) {
-      browser.tabs.sendMessage(tab.id, payload).catch(() => {
-        // Tab may not have the content script yet (e.g. new tab page); ignore.
+      browser.tabs.sendMessage(tab.id, payload).catch(async () => {
+        try {
+          await browser.scripting.executeScript({
+            target: { tabId: tab.id },
+            files: ['content/index.js'],
+          })
+          browser.tabs.sendMessage(tab.id, payload).catch(() => {})
+        } catch { /* tab may not allow injection (e.g. chrome-extension page) */ }
       })
     }
   }
