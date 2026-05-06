@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Extinction Alert",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reminds you that species are going extinct — roughly once every 20 minutes.",
   "permissions": ["alarms", "scripting", "storage", "tabs"],
   "host_permissions": ["<all_urls>"],
