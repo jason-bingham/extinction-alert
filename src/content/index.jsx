@@ -22,41 +22,63 @@ browser.runtime.onMessage.addListener((msg) => {
   }
 })
 
+let audioCtx = null
+
+function getAudioCtx() {
+  if (!audioCtx || audioCtx.state === 'closed') audioCtx = new AudioContext()
+  return audioCtx
+}
+
+// Unlock the AudioContext on first user interaction so it's ready when alerts fire.
+;['click', 'keydown', 'pointerdown'].forEach((evt) =>
+  document.addEventListener(evt, () => {
+    const ctx = getAudioCtx()
+    if (ctx.state === 'suspended') ctx.resume().catch(() => {})
+  }, { passive: true })
+)
+
 function playChime() {
   try {
-    const ctx = new AudioContext()
-    const t = ctx.currentTime
+    const ctx = getAudioCtx()
 
-    // Heavy thud — sine drops from 48 Hz to 22 Hz fast
-    const thud = ctx.createOscillator()
-    const thudGain = ctx.createGain()
-    thud.type = 'sine'
-    thud.frequency.setValueAtTime(48, t)
-    thud.frequency.exponentialRampToValueAtTime(22, t + 0.22)
-    thudGain.gain.setValueAtTime(0.6, t)
-    thudGain.gain.exponentialRampToValueAtTime(0.001, t + 0.4)
-    thud.connect(thudGain)
-    thudGain.connect(ctx.destination)
-    thud.start(t)
-    thud.stop(t + 0.4)
+    const doPlay = () => {
+      const t = ctx.currentTime
 
-    // Tritone stab (D2 + Ab2) — the "devil's interval", triangle for cleaner tone
-    const stab = (freq, start, dur, vol = 0.17) => {
-      const osc = ctx.createOscillator()
-      const gain = ctx.createGain()
-      osc.type = 'triangle'
-      osc.frequency.value = freq
-      gain.gain.setValueAtTime(vol, start)
-      gain.gain.exponentialRampToValueAtTime(0.001, start + dur)
-      osc.connect(gain)
-      gain.connect(ctx.destination)
-      osc.start(start)
-      osc.stop(start + dur)
+      // Heavy thud — sine drops from 48 Hz to 22 Hz fast
+      const thud = ctx.createOscillator()
+      const thudGain = ctx.createGain()
+      thud.type = 'sine'
+      thud.frequency.setValueAtTime(48, t)
+      thud.frequency.exponentialRampToValueAtTime(22, t + 0.22)
+      thudGain.gain.setValueAtTime(0.6, t)
+      thudGain.gain.exponentialRampToValueAtTime(0.001, t + 0.4)
+      thud.connect(thudGain)
+      thudGain.connect(ctx.destination)
+      thud.start(t)
+      thud.stop(t + 0.4)
+
+      // Tritone stab (D2 + Ab2) — the "devil's interval", triangle for cleaner tone
+      const stab = (freq, start, dur, vol = 0.17) => {
+        const osc = ctx.createOscillator()
+        const gain = ctx.createGain()
+        osc.type = 'triangle'
+        osc.frequency.value = freq
+        gain.gain.setValueAtTime(vol, start)
+        gain.gain.exponentialRampToValueAtTime(0.001, start + dur)
+        osc.connect(gain)
+        gain.connect(ctx.destination)
+        osc.start(start)
+        osc.stop(start + dur)
+      }
+      stab(73, t, 1.8)        // D2
+      stab(103, t + 0.04, 1.8) // Ab2 — tritone above D2
     }
-    stab(73, t, 1.8)        // D2
-    stab(103, t + 0.04, 1.8) // Ab2 — tritone above D2
 
-    setTimeout(() => ctx.close(), 2200)
+    if (ctx.state === 'running') {
+      doPlay()
+    } else {
+      ctx.resume().then(doPlay).catch(() => {})
+    }
   } catch (_) {}
 }
 
